@@ -19,6 +19,8 @@ import {
 import HomeScreen from './pages/home';
 import DetailsScreen from './pages/details';
 import ProfileScreen from './pages/login';
+import Lista from './pages/lista';
+import Cadastro from './pages/cadastro';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,38 +35,46 @@ function HomeStack() {
                 headerTitleStyle: { fontWeight: 'bold' }
             }}>
             <Stack.Screen
-                name="Home"
-                component={HomeScreen}
-                options={{ title: 'Home' }} />
-            <Stack.Screen
+           
                 name="Details"
                 component={DetailsScreen}
                 options={{ title: 'Pagina de Detalhes' }} />
+            <Stack.Screen     name="Home"
+                component={HomeScreen}
+                options={{ title: 'Home' }} />
             <Stack.Screen
                 name="Login"
                 component={ProfileScreen}
                 options={{ title: 'Login' }} />
+            <Stack.Screen
+                name="Cadastro"
+                component={Cadastro}
+                options={{ title: 'Pagina de Cadastro' }} />
+            <Stack.Screen
+                name="Lista"
+                component={Lista}
+                options={{ title: 'Listas' }} />
         </Stack.Navigator>
     );
 }
 
 function ProfileStack() {
     return (
-      <Stack.Navigator
-        initialRouteName="Profile"
-        screenOptions={{
-          headerStyle: { backgroundColor: '#8901CF' },
-          headerTintColor: '#fff',
-          headerTitleStyle: { fontWeight: 'bold' }
-        }}>
-        <Stack.Screen
-          name="Profile"
-          component={ProfileScreen}
-          options={{ title: 'Profile Page' }}/>
+        <Stack.Navigator
+            initialRouteName="Profile"
+            screenOptions={{
+                headerStyle: { backgroundColor: '#8901CF' },
+                headerTintColor: '#fff',
+                headerTitleStyle: { fontWeight: 'bold' }
+            }}>
+            <Stack.Screen
+                name="Profile"
+                component={ProfileScreen}
+                options={{ title: 'Login' }} />
 
-      </Stack.Navigator>
+        </Stack.Navigator>
     );
-  }
+}
 
 const App = () => {
     return (

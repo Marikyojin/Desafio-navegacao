@@ -1,8 +1,12 @@
 import * as React from 'react';
-import { View, Text, SafeAreaView, Image } from 'react-native';
+import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-native';
 
 const ProfileScreen = () => {
+  const [usuario, setUsuario] = React.useState('Usuário');
+  const [senha, setSenha] = React.useState('Senha');
+
   return (
+    <ScrollView>
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, padding: 16 }}>
         <View
@@ -16,7 +20,7 @@ const ProfileScreen = () => {
               fontSize: 25,
               textAlign: 'center',
               marginBottom: 16,
-              color:'#9966cc'
+              color: '#9966cc'
             }}>
             Login
           </Text>
@@ -30,10 +34,38 @@ const ProfileScreen = () => {
             }}
           />
         </View>
+        <TextInput
+          style={{
+            height: 40,
+            width: 300,
+            margin: 12,
+            borderWidth: 1,
+            borderColor: '#9966cc',
+            color: '#9966cc',
+            textAlign: 'center'
+          }}
+          onChangeText={usuario => setUsuario(usuario)}
+          value={usuario}
+        />
+        <TextInput
+          style={{
+            height: 40,
+            width: 300,
+            margin: 12,
+            borderWidth: 1,
+            borderColor: '#9966cc',
+            color: '#9966cc',
+            textAlign: 'center'
+          }}
+          secureTextEntry={true} 
+          onChangeText={senha => setSenha(senha)}
+          value={senha}
+        />
 
 
       </View>
     </SafeAreaView>
+    </ScrollView>
   );
 }
 
